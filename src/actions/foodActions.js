@@ -1,4 +1,4 @@
-import {FETCH_MAIN_DATA,FETCH_MAIN_VO} from "./types";
+import {FETCH_MAIN_DATA,FETCH_MAIN_VO,FETCH_FOOD_LIST,FETCH_FOOD_FIND} from "./types";
 import axios from "axios";
 import reducers from "../reducers";
 /*
@@ -26,5 +26,52 @@ export const fetchMainVO=()=>dispatch=>{
             payload: response.data
         }
         dispatch(action)
+    })
+}
+
+export const fetchFoodList=(page)=>dispatch=>{
+    axios.get('http://localhost/food/list_react',{
+        params:{
+            page:page
+        }
+    }).then(response=>{
+        const action={
+            type:FETCH_FOOD_LIST,
+            payload:response.data
+        }
+        // reducer로 전송
+        dispatch(action)
+    })
+}
+//[] {}=>JSON
+/*
+      let a={"name":"홍길동",age:20}
+      a.name , a.age
+      cnst list=[{},{},{},{}]
+      list.map((m)=>
+        <div></div>
+      )
+      list.map((m)=>{
+        return (
+
+        )
+      })
+ */
+export const fetchFoodFind=(page,address)=>dispatch=>{
+    axios.get('http://localhost/food/find_react',{
+        params:{
+            page:page,
+            address:address
+        }
+    }).then(response=>{
+        const action={
+            type:FETCH_FOOD_FIND,
+            payload:response.data
+        }
+        dispatch(action)
+        // main
+        /*
+            Thread => start(){run()}
+         */
     })
 }

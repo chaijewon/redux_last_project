@@ -1,4 +1,6 @@
 import {Fragment} from "react";
+import {Link} from "react-router-dom";
+
 function Header(){
 
     return (
@@ -53,7 +55,7 @@ function Header(){
 
                         <div className="col-12">
                             <div className="logo_area text-center">
-                                <a href="index.html" className="yummy-logo">Redux Food And Recipe</a>
+                                <Link to={"/"} className="yummy-logo">Redux Food And Recipe</Link>
                             </div>
                         </div>
                     </div>
@@ -70,17 +72,17 @@ function Header(){
                                 <div className="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                                     <ul className="navbar-nav" id="yummy-nav">
                                         <li className="nav-item active">
-                                            <a className="nav-link" href="index.html">Home <span
-                                                className="sr-only">(current)</span></a>
+                                            <Link className="nav-link" to={"/"}>Home <span
+                                                className="sr-only">(current)</span></Link>
                                         </li>
                                         <li className="nav-item dropdown">
                                             <a className="nav-link dropdown-toggle" href="#" id="yummyDropdown"
                                                role="button" data-toggle="dropdown" aria-haspopup="true"
                                                aria-expanded="false">맛집</a>
                                             <div className="dropdown-menu" aria-labelledby="yummyDropdown">
-                                                <a className="dropdown-item" href="index.html">맛집 목록</a>
-                                                <a className="dropdown-item" href="archive.html">맛집 검색</a>
-                                                <a className="dropdown-item" href="archive.html">맛집 예약</a>
+                                                <Link className="dropdown-item" to={"/food/list"}>맛집 목록</Link>
+                                                <Link className="dropdown-item" to={"/food/find"}>맛집 검색</Link>
+                                                <Link className="dropdown-item" to={"/food/reserve"}>맛집 예약</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item dropdown">
@@ -88,7 +90,7 @@ function Header(){
                                                role="button" data-toggle="dropdown" aria-haspopup="true"
                                                aria-expanded="false">레시피</a>
                                             <div className="dropdown-menu" aria-labelledby="yummyDropdown">
-                                                <a className="dropdown-item" href="index.html">레시피 목록</a>
+                                                <Link className="dropdown-item" to={"/recipe/list"}>레시피 목록</Link>
                                                 <a className="dropdown-item" href="archive.html">쉐프</a>
                                             </div>
                                         </li>
