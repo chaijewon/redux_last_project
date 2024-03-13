@@ -1,0 +1,26 @@
+import {FETCH_MAIN_DATA, FETCH_MAIN_VO} from "../actions/types";
+// food관련 React => useState지정된 데이터를 한곳에 모아둔다
+const foodState={
+    food_main_list:[],
+    food_main_vo:{}
+}
+
+// dispatch(action) ==> 구현
+// react => useSelector((state)=> state.foods.food_main_list)
+export default function(state=foodState,action){
+    switch (action.type)
+    {
+        case FETCH_MAIN_DATA:
+            return {
+                ...state,
+                food_main_list: action.payload
+            }
+        case FETCH_MAIN_VO:
+            return {
+                ...state,
+                food_main_vo: action.payload
+            }
+        default:
+            return state
+    }
+}
