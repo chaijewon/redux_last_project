@@ -2,6 +2,7 @@ import {Fragment,useState,useEffect} from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {fetchFoodList} from "../../actions/foodActions";
 import Pagination from "react-js-pagination";
+import {Link} from "react-router-dom";
 export const FoodList=()=>{
     const [curpage,setCurpage]=useState(1)
     const dispatch=useDispatch()
@@ -25,7 +26,9 @@ export const FoodList=()=>{
                             <div className="single-post wow fadeInUp" data-wow-delay=".4s">
 
                                 <div className="post-thumb">
-                                    <img src={"http://www.menupan.com" + food.poster} alt=""/>
+                                    <Link to={"/food/detail/"+food.fno}>
+                                     <img src={"http://www.menupan.com" + food.poster} alt=""/>
+                                    </Link>
                                 </div>
 
                                 <div className="post-content">
@@ -33,8 +36,12 @@ export const FoodList=()=>{
                                         <div className="post-author-date-area d-flex">
 
                                             <div className="post-author">
-                                                <a href="#">{food.name}</a>
+                                                <Link to={"/food/detail/" + food.fno}>{food.name}</Link>
                                             </div>
+                                        </div>
+                                        <div className="post-comments">
+                                            <a href="#"><i className="fa fa-heart-o"
+                                                           aria-hidden="true"></i> {food.hit}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -45,8 +52,8 @@ export const FoodList=()=>{
             </div>
             <div style={{"height": "10px"}}></div>
             <div className={"text-center"}>
-                    <Pagination
-                        activePage={curpage}
+                <Pagination
+                    activePage={curpage}
                         itemsCountPerPage={12}
                         totalItemsCount={totalpage}
                         pageRangeDisplayed={10}

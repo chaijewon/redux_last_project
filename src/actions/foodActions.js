@@ -1,4 +1,5 @@
-import {FETCH_MAIN_DATA,FETCH_MAIN_VO,FETCH_FOOD_LIST,FETCH_FOOD_FIND} from "./types";
+import {FETCH_MAIN_DATA,FETCH_MAIN_VO,FETCH_FOOD_LIST,FETCH_FOOD_FIND,
+FETCH_FOOD_DETAIL} from "./types";
 import axios from "axios";
 import reducers from "../reducers";
 /*
@@ -73,5 +74,19 @@ export const fetchFoodFind=(page,address)=>dispatch=>{
         /*
             Thread => start(){run()}
          */
+    })
+}
+
+export const fetchFoodDetail=(fno)=>dispatch=>{
+    axios.get('http://localhost/food/detail_react',{
+        params:{
+            fno:fno
+        }
+    }).then(response=>{
+        const action={
+            type:FETCH_FOOD_DETAIL,
+            payload:response.data
+        }
+        dispatch(action)
     })
 }

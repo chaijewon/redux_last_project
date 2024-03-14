@@ -35,7 +35,10 @@ export const FoodFind=()=>{
                             <div className="single-post wow fadeInUp" data-wow-delay=".4s">
 
                                 <div className="post-thumb">
-                                    <img src={"http://www.menupan.com"+food.poster}/>
+                                    <Link to={"/food/detail/"+food.fno}>
+                                        <img src={"http://www.menupan.com" + food.poster}/>
+                                    </Link>
+
                                 </div>
 
                                 <div className="post-content">
@@ -43,7 +46,11 @@ export const FoodFind=()=>{
                                         <div className="post-author-date-area d-flex">
 
                                             <div className="post-author">
-                                                <a href="#">{food.name}</a>
+                                                <Link to={"/food/detail/"+food.fno}>{food.name}</Link>
+                                            </div>
+                                            <div className="post-comments">
+                                                <a href="#"><i className="fa fa-heart-o"
+                                                               aria-hidden="true"></i> {food.hit}</a>
                                             </div>
                                         </div>
                                     </div>

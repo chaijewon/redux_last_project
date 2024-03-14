@@ -2,6 +2,8 @@ import {Fragment,useEffect} from "react";
 import {fetchMainData,fetchMainVO} from "../../actions/foodActions";
 import {fetchRecipeMainList} from "../../actions/recipeActions";
 import {useSelector,useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
+
 function Home(){
     const dispatch=useDispatch()
     useEffect(()=>{
@@ -54,9 +56,9 @@ function Home(){
                             <div className="single_catagory wow fadeInUp" data-wow-delay=".3s">
                                 <img src="/img/catagory-img/1.jpg" alt=""/>
                                 <div className="catagory-title">
-                                    <a href="#">
+                                    <Link to={"/food/list"}>
                                         <h5>맛집</h5>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -64,9 +66,9 @@ function Home(){
                             <div className="single_catagory wow fadeInUp" data-wow-delay=".6s">
                                 <img src="/img/catagory-img/2.jpg" alt=""/>
                                 <div className="catagory-title">
-                                    <a href="#">
+                                    <Link to={"/recipe/list"}>
                                         <h5>레시피</h5>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -74,9 +76,9 @@ function Home(){
                             <div className="single_catagory wow fadeInUp" data-wow-delay=".9s">
                                 <img src="/img/catagory-img/3.jpg" alt=""/>
                                 <div className="catagory-title">
-                                    <a href="#">
+                                    <Link to={"/goods/list"}>
                                         <h5>스토어</h5>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -21,7 +21,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4",
-    "bootstrap-beta": "^4.0.0-beta"
+    "bootstrap-beta": "^4.0.0-beta",
+    "react-bootstrap": "^2.10.1",
+    "redux-persist": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

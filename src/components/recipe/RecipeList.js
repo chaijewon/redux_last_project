@@ -3,6 +3,7 @@ import {useSelector,useDispatch} from "react-redux";
 import axios from "axios";
 import {fetchRecipeList} from "../../actions/recipeActions";
 import Pagination from "react-js-pagination";
+import {Link} from "react-router-dom";
 /*
     1. 파일 제작 => js / ts
 
@@ -68,6 +69,8 @@ import Pagination from "react-js-pagination";
  */
 export const RecipeList=()=>{
     const [curpage,setCurpage]=useState(1)
+    // setXxx => re-render => 계속 서버 연결 => 화면 저장 cache(5분)
+    // 특정 기능 .....
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(fetchRecipeList(curpage))
@@ -89,7 +92,10 @@ export const RecipeList=()=>{
                             <div className="single-post wow fadeInUp" data-wow-delay=".4s">
 
                                 <div className="post-thumb">
-                                    <img src={recipe.poster} title={recipe.title}/>
+                                    <Link to={"/recipe/detail/"+recipe.no}>
+                                        <img src={recipe.poster} title={recipe.title}/>
+                                    </Link>
+
                                 </div>
 
                                 <div className="post-content">

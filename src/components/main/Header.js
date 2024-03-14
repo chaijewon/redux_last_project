@@ -91,7 +91,7 @@ function Header(){
                                                aria-expanded="false">레시피</a>
                                             <div className="dropdown-menu" aria-labelledby="yummyDropdown">
                                                 <Link className="dropdown-item" to={"/recipe/list"}>레시피 목록</Link>
-                                                <a className="dropdown-item" href="archive.html">쉐프</a>
+                                                <Link className="dropdown-item" to={"/chef/list"}>쉐프</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item dropdown">
@@ -106,7 +106,7 @@ function Header(){
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">커뮤니티</a>
+                                            <Link className="nav-link" to={"/board/list"}>커뮤니티</Link>
                                         </li>
 
                                     </ul>
