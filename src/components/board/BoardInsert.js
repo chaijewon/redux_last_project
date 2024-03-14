@@ -61,11 +61,11 @@ function BoardInsert(){
     }
     // 결과값을 받는다
     const result=useSelector((state)=>state.boards.result)
-    if(result==='yes')
+    if(result&& result==='yes')
     {
-        nav('/board/list')
+        window.loaction.href='/board/list'
     }
-    else if(result==='no')
+    else if(result && result==='no')
     {
         alert('게시판 추가에 실패하셨습니다')
     }

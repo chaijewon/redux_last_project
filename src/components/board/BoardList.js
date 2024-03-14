@@ -46,7 +46,7 @@ export const BoardList=()=>{
                         board_list.map((vo)=>
                             <tr>
                                 <td className={"text-center"} width={"10%"}>{vo.no}</td>
-                                <td width={"45%"}>{vo.subject}</td>
+                                <td width={"45%"}><Link to={"/board/detail/"+vo.no}>{vo.subject}</Link></td>
                                 <td className={"text-center"} width={"15%"}>{vo.name}</td>
                                 <td className={"text-center"} width={"20%"}>{vo.regdate}</td>
                                 <td className={"text-center"} width={"10%"}>{vo.hit}</td>
